@@ -116,20 +116,22 @@ int main()
         ll x, y, a, b, k;
         cin >> x >> y >> a >> b >> k;
 
-        ll petrol = x + (a * k);
-        ll diesel = y + (b * k);
-
-        if (petrol < diesel)
+        for (int i = 0; i < k; i++)
+        {
+            x = x + a;
+            y = y + b;
+        }
+        if (x < y)
         {
             cout << "PETROL" << ln;
         }
-        else if (petrol > diesel)
+        else if (x == y)
         {
-            cout << "DIESEL" << ln;
+            cout << "SAME PRICE" << ln;
         }
         else
         {
-            cout << "SAME PRICE" << ln;
+            cout << "DIESEL" << ln;
         }
     }
     return 0;
